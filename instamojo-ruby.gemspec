@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
     ".rspec",
     "Gemfile",
     "Gemfile.lock",
-    "Instamojo-rb.gemspec",
+    "instamojo-ruby.gemspec",
     "LICENSE.txt",
     "README.md",
     "README.rdoc",
