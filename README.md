@@ -49,7 +49,7 @@ client.links_list
 ```
 ##### Supports optional pagination
 ```ruby
-client.links_list(1, 10)
+client.links_list(page:1, limit:10)
 #=> Array of 10 Link objects (page 1)
 ```
 
@@ -149,7 +149,7 @@ client.payments_list
 ```
 ##### Supports optional pagination
 ```ruby
-client.payments_list(1, 10)
+client.payments_list(page:1, limit:10)
 #=> Array of 10 Payment objects (page 1)
 ```
 #### Detail or status of a payment
@@ -173,7 +173,7 @@ payment_requests = client.payment_requests_list
 ```
 ##### Supports optional pagination
 ```ruby
-client.payment_requests_list(1, 10)
+client.payment_requests_list(page:1, limit:10)
 #=> Array of 10 PaymentRequest objects (page 1)
 ```
 #### Status of payment request
@@ -195,7 +195,7 @@ refunds = client.refunds_list
 ```
 ##### Supports optional pagination
 ```ruby
-client.refunds_list(1, 10)
+client.refunds_list(page:1, limit:10)
 #=> Array of 10 Refund objects (page 1)
 ```
 #### Create a new refund

@@ -75,8 +75,8 @@ module Instamojo
     end
 
     # GET /links
-    def links_list(page = nil, limit = nil)
-      get('links', get_pagination_params(page, limit))
+    def links_list(opts = {})
+      get('links', opts)
       @response.success? ? @response.body[:links].map { |link| Instamojo::Link.new link, self } : @response
     end
 
@@ -126,8 +126,8 @@ module Instamojo
 
 
     # GET /payments
-    def payments_list(page = nil, limit = nil)
-      get('payments', get_pagination_params(page, limit))
+    def payments_list(opts = {})
+      get('payments', opts)
       @response.success? ? @response.body[:payments].map { |payment| Instamojo::Payment.new payment, self } : @response
     end
 
@@ -146,8 +146,8 @@ module Instamojo
     end
 
     # GET /payment-requests
-    def payment_requests_list(page = nil, limit = nil)
-      get('payment-requests', get_pagination_params(page, limit))
+    def payment_requests_list(opts = {})
+      get('payment-requests', opts)
       @response.success? ? @response.body[:payment_requests].map { |payment_request| Instamojo::PaymentRequest.new payment_request, self } : @response
     end
 
@@ -158,8 +158,8 @@ module Instamojo
     end
 
     # GET /refunds
-    def refunds_list(page = nil, limit = nil)
-      get('refunds', get_pagination_params(page, limit))
+    def refunds_list(opts = {})
+      get('refunds', opts)
       @response.success? ? @response.body[:refunds].map { |refund| Instamojo::Refund.new refund, self } : @response
     end
 
@@ -222,18 +222,6 @@ module Instamojo
     def get_file_upload_url
       get('links/get_file_upload_url')
       @response.success? ? @response.body[:upload_url] : @response
-    end
-
-    def get_pagination_params(page, limit)
-      params = {}
-      if page != nil
-        params.merge!(page: page)
-      end
-
-      if limit != nil
-        params.merge!(limit: limit)
-      end
-      params
     end
   end
 end
