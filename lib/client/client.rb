@@ -75,10 +75,11 @@ module Instamojo
     end
 
     # GET /links
-    def links_list
-      get('links')
+    def links_list(opts = {})
+      get('links', opts)
       @response.success? ? @response.body[:links].map { |link| Instamojo::Link.new link, self } : @response
     end
+
 
     # GET /links/:slug
     def link_detail(slug)
@@ -125,8 +126,8 @@ module Instamojo
 
 
     # GET /payments
-    def payments_list
-      get('payments')
+    def payments_list(opts = {})
+      get('payments', opts)
       @response.success? ? @response.body[:payments].map { |payment| Instamojo::Payment.new payment, self } : @response
     end
 
@@ -145,8 +146,8 @@ module Instamojo
     end
 
     # GET /payment-requests
-    def payment_requests_list
-      get('payment-requests')
+    def payment_requests_list(opts = {})
+      get('payment-requests', opts)
       @response.success? ? @response.body[:payment_requests].map { |payment_request| Instamojo::PaymentRequest.new payment_request, self } : @response
     end
 
@@ -157,8 +158,8 @@ module Instamojo
     end
 
     # GET /refunds
-    def refunds_list
-      get('refunds')
+    def refunds_list(opts = {})
+      get('refunds', opts)
       @response.success? ? @response.body[:refunds].map { |refund| Instamojo::Refund.new refund, self } : @response
     end
 

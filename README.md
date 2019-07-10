@@ -3,9 +3,9 @@ This is the **Ruby** library of [Instamojo REST API](https://www.instamojo.com/d
 This will assist you to programmatically create, edit and delete links on Instamojo. Also supports [RAP](https://www.instamojo.com/developers/request-a-payment-api/) api for payments request, listing and status.
 
 ## Installation
-`gem install Instamojo-rb`
+`gem install instamojo-ruby`
 For your Rails/bundler projects:
-`gem 'Instamojo-rb'`
+`gem 'instamojo-ruby'`
 
 ## Usage
 ### Set API keys
@@ -46,6 +46,11 @@ _Helper methods_ for `Link`:
 ```ruby
 client.links_list
 #=> Array of Instamojo::Link objects
+```
+##### Supports optional pagination
+```ruby
+client.links_list(page:1, limit:10)
+#=> Array of 10 Link objects (page 1)
 ```
 
 #### Create a new product
@@ -142,6 +147,11 @@ Details are documented [here](https://www.instamojo.com/developers/rest/#toc-pay
 client.payments_list
 #=> Returns array of Payment objects
 ```
+##### Supports optional pagination
+```ruby
+client.payments_list(page:1, limit:10)
+#=> Array of 10 Payment objects (page 1)
+```
 #### Detail or status of a payment
 ```ruby
 payment = client.payment_detail('MOJxxx06000F97367750')
@@ -161,6 +171,11 @@ payment_request = client.payment_request({amount:100, purpose: 'api', send_email
 payment_requests = client.payment_requests_list
 #=> Returns array of PaymentRequest objects
 ```
+##### Supports optional pagination
+```ruby
+client.payment_requests_list(page:1, limit:10)
+#=> Array of 10 PaymentRequest objects (page 1)
+```
 #### Status of payment request
 You can get the status of a payment_request from the id you obtained after making payment request.
 ```ruby
@@ -178,7 +193,11 @@ payment_request = client.payment_request_status('8726f8c5001e426f8b24e908b276168
 refunds = client.refunds_list
 #=> Returns array of Refund objects
 ```
-
+##### Supports optional pagination
+```ruby
+client.refunds_list(page:1, limit:10)
+#=> Array of 10 Refund objects (page 1)
+```
 #### Create a new refund
 ##### Required:
 * `payment_id` - Payment ID of the payment against which you're initiating the refund.

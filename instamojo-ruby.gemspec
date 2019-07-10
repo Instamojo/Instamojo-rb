@@ -5,15 +5,15 @@
 # stub: Instamojo-rb 1.1.0 ruby lib
 
 Gem::Specification.new do |s|
-  s.name = "Instamojo-rb"
-  s.version = "1.1.0"
+  s.name = "instamojo-ruby"
+  s.version = "1.1.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.require_paths = ["lib"]
-  s.authors = ["Ankur Goel"]
+  s.authors = ["Instamojo Technologies"]
   s.date = "2015-12-18"
   s.description = "Instamojo Ruby library - Assists you to programmatically create, edit and delete offers on Instamojo. Also supports listing, updation and details of Payments, Payments Requests and Refunds."
-  s.email = "ankurgel@gmail.com"
+  s.email = "dev-accounts@instamojo.com"
   s.extra_rdoc_files = [
     "LICENSE.txt",
     "README.md",
@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
     ".rspec",
     "Gemfile",
     "Gemfile.lock",
-    "Instamojo-rb.gemspec",
+    "instamojo-ruby.gemspec",
     "LICENSE.txt",
     "README.md",
     "README.rdoc",
@@ -44,7 +44,7 @@ Gem::Specification.new do |s|
     "spec/Instamojo-rb_spec.rb",
     "spec/spec_helper.rb"
   ]
-  s.homepage = "http://github.com/AnkurGel/Instamojo-rb"
+  s.homepage = "http://github.com/Instamojo/Instamojo-rb"
   s.licenses = ["MIT"]
   s.rubygems_version = "2.2.2"
   s.summary = "Instamojo Ruby library - Assists you to programmatically create, edit and delete offers on Instamojo"

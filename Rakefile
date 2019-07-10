@@ -14,13 +14,13 @@ require 'rake'
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
-  gem.name = "Instamojo-rb"
-  gem.homepage = "http://github.com/AnkurGel/Instamojo-rb"
+  gem.name = "instamojo-ruby"
+  gem.homepage = "http://github.com/Instamojo/Instamojo-rb"
   gem.license = "MIT"
   gem.summary = %Q{Instamojo Ruby library - Assists you to programmatically create, edit and delete offers on Instamojo}
   gem.description = %Q{Instamojo Ruby library - Assists you to programmatically create, edit and delete offers on Instamojo. Also supports listing, updation and details of Payments, Payments Requests and Refunds.}
-  gem.email = "ankurgel@gmail.com"
-  gem.authors = ["Ankur Goel"]
+  gem.email = "dev-accounts@instamojo.com"
+  gem.authors = ["Instamojo Technologies"]
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new
@@ -38,7 +38,7 @@ Rake::RDocTask.new do |rdoc|
   version = File.exist?('VERSION') ? File.read('VERSION') : ""
 
   rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "Instamojo-rb #{version}"
+  rdoc.title = "instamojo-ruby #{version}"
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
